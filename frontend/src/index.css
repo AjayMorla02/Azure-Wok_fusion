@@ -28,7 +28,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: 'Outfit', sans-serif;
 }
 
@@ -125,7 +128,7 @@ h1, h2, h3, h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, rgba(8,8,8,1) 0%, rgba(8,8,8,0.7) 45%, rgba(8,8,8,0.1) 100%);
+  background: linear-gradient(90deg, rgba(8, 8, 8, 1) 0%, rgba(8, 8, 8, 0.7) 45%, rgba(8, 8, 8, 0.1) 100%);
   z-index: -1;
 }
 
@@ -151,7 +154,7 @@ h1, h2, h3, h4 {
   font-size: 5.5rem;
   line-height: 1.05;
   margin-bottom: 1.8rem;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
 }
 
 .hero-desc {
@@ -193,9 +196,9 @@ h1, h2, h3, h4 {
 }
 
 .btn-outline {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   color: #fff;
-  border: 2px solid rgba(255,255,255,0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(5px);
 }
 
@@ -239,12 +242,29 @@ h1, h2, h3, h4 {
   display: block;
 }
 
+/* Category Headers */
+.menu-category-title {
+  font-size: 2.5rem;
+  color: var(--text-main);
+  text-align: left;
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.menu-category-desc {
+  text-align: left;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 3rem;
-  max-width: 1400px;
-  margin: 0 auto;
+  margin-bottom: 5rem;
   position: relative;
   z-index: 2;
 }
@@ -264,7 +284,7 @@ h1, h2, h3, h4 {
 
 .food-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 20px var(--primary-glow);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px var(--primary-glow);
   border-color: rgba(255, 69, 0, 0.3);
 }
 
@@ -296,7 +316,7 @@ h1, h2, h3, h4 {
   font-weight: 700;
   font-size: 0.9rem;
   z-index: 2;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .food-info {
@@ -373,12 +393,79 @@ h1, h2, h3, h4 {
   color: #fff;
 }
 
+/* Story Section */
+.story-section {
+  padding: 8rem 5rem;
+  background: var(--bg-card);
+  position: relative;
+  border-top: 1px solid var(--border);
+}
+
+.story-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.story-content {
+  flex: 1;
+  text-align: left;
+}
+
+.story-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #c0c0c0;
+  margin-bottom: 1.5rem;
+}
+
+.takeout-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(255, 69, 0, 0.15);
+  border: 1px solid var(--primary);
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+.owner-info {
+  margin-top: 2rem;
+  padding-left: 1.5rem;
+  border-left: 4px solid var(--primary);
+}
+
+.owner-info p {
+  margin-bottom: 0.4rem;
+  color: var(--text-main);
+  font-size: 1.1rem;
+}
+
+.story-image {
+  flex: 1;
+}
+
+.story-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+  height: 500px;
+}
+
 /* Animations */
 @keyframes slideUp {
   from {
     opacity: 0;
     transform: translateY(50px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -386,17 +473,30 @@ h1, h2, h3, h4 {
 }
 
 @keyframes slowZoom {
-  from { transform: scale(1); }
-  to { transform: scale(1.15); }
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.15);
+  }
 }
 
 @media (max-width: 992px) {
   .hero-title {
     font-size: 4.5rem;
   }
-  .navbar, .hero, .menu-section {
+
+  .navbar,
+  .hero,
+  .menu-section,
+  .story-section {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .story-container {
+    flex-direction: column;
   }
 }
 
@@ -404,19 +504,27 @@ h1, h2, h3, h4 {
   .hero-title {
     font-size: 3.5rem;
   }
-  .navbar, .hero, .menu-section {
+
+  .navbar,
+  .hero,
+  .menu-section,
+  .story-section {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+
   .nav-links {
     display: none;
   }
+
   .hero-actions {
     flex-direction: column;
   }
+
   .btn-outline {
     margin-left: 0;
   }
+
   .section-title {
     font-size: 2.5rem;
   }
