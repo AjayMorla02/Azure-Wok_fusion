@@ -1,31 +1,23 @@
 export default function Hero() {
   return (
-    <section className="bg-black text-white min-h-screen flex items-center px-10">
-      
-      <div className="w-1/2">
-        <h1 className="text-6xl font-bold text-orange-500">
-          WOK FUSION
-        </h1>
+    <section className="hero">
+      <div className="hero-bg">
+        <img src="https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&q=80&w=2000" alt="Wok Cooking" />
+      </div>
+      <div className="hero-overlay"></div>
 
-        <p className="mt-6 text-lg text-gray-300">
-          Master the Art of Indo-Chinese Wok Cooking
+      <div className="hero-content">
+        <span className="hero-tagline">Master of the Wok</span>
+        <h1 className="hero-title">Fiery Indo-Chinese Flavors</h1>
+        <p className="hero-desc">
+          Experience the authentic taste of street-style Indo-Chinese cuisine.
+          Fresh ingredients, traditional spices, and the intense heat of the wok,
+          brought together to create unforgettable dishes.
         </p>
-
-        <div className="mt-8 space-x-4">
-          <button className="bg-orange-500 px-6 py-3 rounded hover:bg-orange-600">
-            View Menu
-          </button>
-
-          <button className="border px-6 py-3 rounded hover:bg-white hover:text-black">
-            Order Now
-          </button>
+        <div className="hero-actions">
+          <a href="#menu" className="btn btn-primary">Explore Menu</a>
         </div>
       </div>
-
-      <div className="w-1/2">
-        {/* later we add food image */}
-      </div>
-
     </section>
   );
-}
+}  

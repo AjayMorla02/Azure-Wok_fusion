@@ -1,12 +1,18 @@
-export default function FoodCard({ name, price }) {
+export default function FoodCard({ name, price, description, image, isPopular }) {
   return (
-    <div className="bg-gray-900 text-white p-4 rounded-lg hover:scale-105 transition">
-      <h3 className="text-xl font-semibold">{name}</h3>
-      <p className="text-orange-400">${price}</p>
-
-      <button className="mt-3 bg-orange-500 px-4 py-1 rounded">
-        Add to Cart
-      </button>
+    <div className="food-card">
+      <div className="food-img-wrapper">
+        {isPopular && <div className="food-badge">Popular</div>}
+        <img src={image} alt={name} className="food-img" />
+      </div>
+      <div className="food-info">
+        <div className="food-header">
+          <h3 className="food-name">{name}</h3>
+          <span className="food-price">${price}</span>
+        </div>
+        <p className="food-desc">{description}</p>
+        <button className="food-btn">Add to Order</button>
+      </div>
     </div>
   );
 }
